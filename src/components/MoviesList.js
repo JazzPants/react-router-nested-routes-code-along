@@ -2,12 +2,13 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
+//moviesList becomes like a "navbar" inside the MoviesPage component
 const MoviesList = ({ movies }) => {
   const renderMovies = Object.keys(movies).map(movieID =>
-    <li><Link key={movieID} to={`/movies/${movieID}`}>{movies[movieID].title}</Link></li>
+    <li key={movieID}><Link key={movieID} to={`/movies/${movieID}`}>{movies[movieID].title}</Link></li>
   );
 //use object.keys to get an array of keys, then map over this array, e.g. movieID = id: 2 in movies is the movie with title Se7en
-//index number aligns with movie id number in state object from app.js 
+//index number aligns with movie id number in state object from app.js, so don't really need to use IDX or I as a second argument in the map function
 //movieID = [1,2,3]
 //nested object - person["lastName"].example;
 //use movies[movieID].title in the to={} if you want to use movie title instead of id

@@ -21,12 +21,16 @@ class App extends Component {
       <Router>
         <div>
           <NavBar />
-          <Route exact path="/" render={() => <div>Home</div>} />
+          <Route exact path="/" render={() => { console.log("I'm re-rendering!")
+          return <div>Home</div> }} />
           <Route path='/movies' render={routerProps => <MoviesPage {...routerProps} movies={this.state.movies}/>} />
         </div>
       </Router>
     );
   }
 }
+//If we go to Movies, or movieshow console.log("I'm re-rendering!") doesn't print! Good!
 //routerProps -> MoviesPage -> match.url --->>> routerProps -> MovieShow -> match.params.moveId
+//{...routerProps} pass in all the properties from routerProps to MoviesPage
+
 export default App;
