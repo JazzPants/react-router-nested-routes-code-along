@@ -28,5 +28,5 @@ class App extends Component {
     );
   }
 }
-
+//routerProps -> MoviesPage -> match.url --->>> routerProps -> MovieShow -> match.params.moveId
 export default App;
