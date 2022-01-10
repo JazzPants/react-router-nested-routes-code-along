@@ -5,6 +5,8 @@ import React from 'react';
 // Here we add `match` to the arguments so we can access the path information 
 // in `routerProps` that is passed from MoviesPage.js 
 const MovieShow = ({match, movies}) => {
+    console.log(match)
+    console.log(match.url)
   return (
     <div>
       {/* // And here we access the `movieId` stored in match.params to render 
